@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style>
+   body  
+{  
+background-color:pink;  
+height:350px;
+width:300px;
+}  
+.b 
+{  
+background-color:gray;  
+height:129px;  
+width:150px;  
+border-radius:10px;  
+position:relative;  
+top:200px;  
+left:180%;  
+} 
+.black{
+    background-color:white; 
+  border: 1px solid black;
+  
+  font-size: 16px;
+    height:20px;
+width:30px;
+}
+.black:hover {
+  background-color:red;
+}
+.pink:hover {
+  background-color:black;
+}
+.pink
+{
+    
+    
+    background-color:white; 
+  border: 1px solid black;
+color:red;
+height:20px;
+width:30px;
+}
+.clear:hover {
+  background-color:black;
+}
+.clear{
+    background-color:white; 
+  border: 1px solid black;
+    color:blue;
+    height:20px;
+    width:30px;
+}
+</style>
+</head>
+<body>
+    <div class="b">  
+        <div><input type="text" readonly size="15" id="d"></div>  
+        <div>
+               <input type="button" class="pink" value="/" onclick='v("/")'>
+               <input type="button" class="pink" value="%" onclick='v("%")'>
+               <input type="button" class="pink" value="√" onclick='v("√")'>
+               <br> 
+               <input type="button" class="black" value="7" onclick='v("7")'>
+               <input type="button"  class="black"value="8" onclick='v("8")'>
+               <input type="button"  class="black"value="9" onclick='v("9")'>
+               <input  type="button" value="*" class="pink" onclick='v("*")'>
+               <br> 
+               <input type="button"  class="black"value="4" onclick='v("4")'>
+               <input type="button"  class="black"value="5" onclick='v("5")'>
+               <input type="button"  class="black"value="6" onclick='v("6")'>
+               <input  type="button" value="-"class="pink" onclick='v("-")'>
+               <br>
+               <input type="button" class="black"value="1" onclick='v("1")'>
+                <input type="button" class="black"value="2" onclick='v("2")'>
+                <input type="button"  class="black"value="3" onclick='v("3")'>
+                <input  type="button"  value="+" class="pink" onclick='v("+")'>
+                <br> 
+               <input type="button"  class="black"value="0" onclick='v("0")'>
+               <input type="button" class="black"value="." onclick='v(".")'>
+               <input type="button" value="C" class="clear" onclick='c("")'>
+               <input  type="button" value="=" class="pink" onclick='s()'>
+               <br>  
+        </div>  
+</div> 
+
+
+
+
+</body>
+<script>
+    function c(val)  
+{  
+document.getElementById("d").value=val;  
+}  
+function v(val)  
+{document.getElementById("d").value+=val;  
+}  
+function s()  
+{  
+    var num=document.getElementById("d").value;
+    if (num.startsWith('√')){
+        var sq= num.replace("√","")
+        var res=Math.sqrt(sq);
+        document.getElementById("d").value=res;
+     
+
+    }
+    else{
+        var res=c(eval(document.getElementById("d").value))
+        
+
+    }
+    
+ 
+    
+ 
+    // 
+
+     
+} 
+
+</script>
+</html>

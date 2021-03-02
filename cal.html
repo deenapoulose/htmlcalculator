@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>
+</title>
+<style>
+body{
+    background-color: pink;
+}
+.b{
+    background-color: blue;
+    height:250px;
+    width:150px;
+}
+</style>
+</head>
+<body>
+<div class="b"> 
+    <div>
+    <input type="text" readonly size="15" id ="t">
+</div>
+<div>
+<input type="button" value="1" onclick='v("1")'>
+<input type="button" value="8"onclick='v("8")' >
+<input type="button" value="+"onclick='v("+")' >
+<input type="button" value="=" onclick='s()'>
+<input type="button" value="C" onclick='c("")'>
+</div>
+</div>
+</body>
+<script>
+    function v(val){
+        document.getElementById("t").value+=val;
+    }
+    function c(val){
+        document.getElementById("t").value=val;
+
+    }
+    function s(){
+        c(eval(document.getElementById("t").value))
+    }
+</script>
+</html>
